@@ -2,9 +2,10 @@
   "name": "cotodo",
   "version": "1.0.0",
   "description": "Collaborative Todo List",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon index.ts",
+    "start": "nodemon src/index.ts",
+    "debug": "nodemon --watch src/**/* -e ts,json --exec 'node --inspect=0.0.0.0:9229 -r ts-node/register src/index.ts'",
     "build": "tsc --project ./",
     "test": "test"
   },

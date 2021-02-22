@@ -8,6 +8,7 @@ function App() {
     const [numbers, setNumbers] = useState<number[]>([]);
 
     useEffect(() => {
+        axios.get('/api-call').then((response) => console.log(response));
         axios.get("/test.json").then((response) => {
             setNumbers(response.data);
         });
@@ -21,7 +22,7 @@ function App() {
                     Edit <code>src/App.tsx</code> and save to reload.
                 </p>
                 <p>
-                    {numbers.join(' - ')}!
+                    {numbers.join(' - ')}
                 </p>
                 <a
                     className="App-link"
